@@ -10,3 +10,8 @@ srcDir        = "src"
 # Dependencies
 
 requires "nim >= 1.6.8"
+
+# TODO: look at nimble tasks
+before test:
+    with_dir "vendor/arboard-ffi":
+        exec "cargo b"

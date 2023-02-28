@@ -9,4 +9,6 @@ import unittest
 
 import pastenim
 test "can add":
-  check add(5, 5) == 10
+  var clipboard: ref ref Clipboard = nil
+  let status = clipboard_new(clipboard)
+  check status == Status.Ok
