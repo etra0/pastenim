@@ -8,3 +8,8 @@ proc clipboard_new*(): Clipboard =
 proc set_text*(cb: Clipboard, text: string): Status =
   let cstr = text.cstring
   return clipboard_set_text(cb, cstr, cstr.len.uint64)
+
+proc get_text*(cb: Clipboard): string =
+  let cb_text = clipboard_get_text(cb)
+  result = $ cb_text
+  destroy_string(cb_text)

@@ -11,3 +11,4 @@ import pastenim
 test "can add":
   let cb = clipboard_new()
   discard cb.set_text("Hello, world!")
+  check cb.get_text() == "Hello, world!"
