@@ -9,6 +9,5 @@ import unittest
 
 import pastenim
 test "can add":
-  var clipboard: ref ref Clipboard = nil
-  let status = clipboard_new(clipboard)
-  check status == Status.Ok
+  let cb = clipboard_new()
+  discard cb.set_text("Hello, world!")
