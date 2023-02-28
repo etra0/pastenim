@@ -1,3 +1,3 @@
-[submodule "vendor/arboard"]
-	path = vendor/arboard
-	url = https://github.com/1Password/arboard.git
+[submodule "vendor/arboard-ffi"]
+	path = vendor/arboard-ffi
+	url = https://github.com/etra0/arboard-ffi.git
