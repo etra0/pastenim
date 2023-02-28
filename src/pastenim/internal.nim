@@ -1,4 +1,12 @@
-{.push dynlib:".\\vendor\\arboard-ffi\\target\\debug\\arboard_ffi.dll".}
+const base_path = "./vendor/arboard-ffi/target/debug/"
+when defined(windows):
+  const arboard_path = base_path & "arboard_ffi.dll"
+elif defined(osx):
+  const arboard_path = base_path & "libarboard_ffi.dylib"
+else:
+  const arboard_path = base_path & "libarboard_ffi.so"
+
+{.push dynlib: arboard_path.}
 
 type 
   ClipboardObj {.incomplete_struct.} = object
